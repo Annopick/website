@@ -33,6 +33,8 @@ icon: "/images/docs/v3.x/docs.svg"
 
 ```bash
 nodes=$(kubectl get nodes -o name)
+# kubernetes版本为1.26.2
+nodes=$(kubectl get nodes -o name|awk -F '/' '{print $2}')
 ```
 
 ### 步骤 2：关闭所有节点
